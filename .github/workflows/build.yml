@@ -25,7 +25,11 @@ jobs:
         os:
           - ubuntu-22.04
           - windows-latest
-          - macos-latest
+          # macOS arm64 hosted runners are often unavailable and jobs are
+          # cancelled after 15 minutes in the queue. The Intel image has
+          # separate capacity and produces an x64 .dmg (runs on Apple
+          # Silicon through Rosetta 2).
+          - macos-15-intel
     steps:
       - name: Checkout
         uses: actions/checkout@v4
