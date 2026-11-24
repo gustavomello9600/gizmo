@@ -15,10 +15,51 @@
 
 ---
 
+## Como rodar
+
+```bash
+pnpm install
+pnpm tauri dev        # app nativo completo (microfone + cérebro LLM)
+```
+
+Prévia rápida da interface sem microfone:
+
+```bash
+pnpm dev              # abre o Studio no navegador
+```
+
+No Studio, use **[Aula Demo]** para ver os seis estilos, os 14 tipos de nó e a linha do tempo de beats sem configurar nada. Os testes e o build nativo:
+
+```bash
+pnpm typecheck
+pnpm test
+cargo test --manifest-path src-tauri/Cargo.toml
+sudo apt-get install -y file      # dependência do bundler AppImage no Linux
+APPIMAGE_EXTRACT_AND_RUN=1 pnpm tauri build --debug
+```
+
+## Builds multiplataforma (GitHub Actions)
+
+O workflow [`.github/workflows/build.yml`](./.github/workflows/build.yml) compila o aplicativo em paralelo para **Windows, macOS e Linux**:
+
+- **Windows:** instalador `.exe` (NSIS) e `.msi`
+- **macOS:** `.dmg`
+- **Linux:** `.deb`, `.rpm` e `.AppImage`
+
+Para gerar os artefatos: abra **Actions → Build Gizmo → Run workflow**. Os arquivos ficam disponíveis em **Artifacts** na execução (`gizmo-Windows`, `gizmo-macOS`, `gizmo-Linux`).
+
+Para criar uma release com download público, publique uma tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+A release é criada automaticamente com todos os binários anexados.
+
 ## O que é o Gizmo?
 
 **Gizmo** (*"Giz"* + *"Gizmo"*) é um aplicativo desktop local, multiplataforma (Windows, macOS e Linux) e de **baixíssima latência**, projetado para atuar como um **copiloto visual ao vivo** para professores, palestrantes, mentores e criadores de conteúdo educacional.
-
 Você simplesmente abre o Gizmo, escolhe seu microfone (ou deixa no automático) e começa a dar sua aula normalmente:
 
 1. **Ouvidos Locais Ultrarrápidos (`sherpa-onnx` em Rust):** Captura áudio em frames lock-free de `32ms`, detecta voz com **Silero VAD v5** (micro-pausa de `280ms`) e transcreve localmente em 25+ idiomas com **NVIDIA Parakeet TDT 0.6B v3 INT8** (ou **Whisper Turbo INT8** para 99 idiomas / **SenseVoice Small INT8**), rodando janelas especulativas a cada `400ms` com *Real-Time Factor* de `~0.015` em CPU comum.

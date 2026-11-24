@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <title>Gizmo — Companion Visual de Aulas em Tempo Real</title>
+  <defs>
+    <!-- Deep 3b1b-inspired studio background -->
+    <linearGradient id="bg-grad" x1="48" y1="32" x2="464" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+
+    <!-- Ambient cyan spotlight behind Gizmo -->
+    <radialGradient id="ambient-glow" cx="256" cy="248" r="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#58C4DD" stop-opacity="0.20"/>
+      <stop offset="60%" stop-color="#83C167" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#070B14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Voice wave warm gradient (Coral -> Amber) -->
+    <linearGradient id="voice-grad" x1="76" y1="128" x2="178" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FB7185"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+
+    <!-- Living illustration stroke gradient (3b1b Cyan -> Mint -> Gold) -->
+    <linearGradient id="trail-grad" x1="194" y1="351" x2="432" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="52%" stop-color="#83C167"/>
+      <stop offset="100%" stop-color="#FACC15"/>
+    </linearGradient>
+
+    <!-- Chalk body subtle 3D shading -->
+    <linearGradient id="chalk-body" x1="196" y1="120" x2="284" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="72%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Glowing nib gradient -->
+    <linearGradient id="nib-glow" x1="240" y1="318" x2="240" y2="362" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle App Badge -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg-grad)" stroke="#1E293B" stroke-width="4"/>
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#ambient-glow)"/>
+
+  <!-- Subtle coordinate grid (nod to math/whiteboard/blueprint canvas) -->
+  <g stroke="#334155" stroke-opacity="0.28" stroke-width="1.5">
+    <line x1="96" y1="168" x2="416" y2="168" stroke-dasharray="6 8"/>
+    <line x1="96" y1="256" x2="416" y2="256" stroke-dasharray="6 8"/>
+    <line x1="96" y1="344" x2="416" y2="344" stroke-dasharray="6 8"/>
+    <line x1="168" y1="96" x2="168" y2="416" stroke-dasharray="6 8"/>
+    <line x1="256" y1="96" x2="256" y2="416" stroke-dasharray="6 8"/>
+    <line x1="344" y1="96" x2="344" y2="416" stroke-dasharray="6 8"/>
+  </g>
+
+  <!-- Left Acoustic Soundwaves ("Ouvidos" — Voice Input) -->
+  <g stroke="url(#voice-grad)" stroke-linecap="round">
+    <line x1="82" y1="176" x2="82" y2="204" stroke-width="10"/>
+    <line x1="108" y1="148" x2="108" y2="220" stroke-width="10"/>
+    <line x1="134" y1="128" x2="134" y2="216" stroke-width="10"/>
+    <line x1="160" y1="150" x2="160" y2="196" stroke-width="10"/>
+  </g>
+
+  <!-- Right Living Vector Illustration Trail (drawn from exact nib tip 193.6, 351.0) -->
+  <!-- Faint geometric construction triangle behind the curve -->
+  <polygon points="274,352 332,262 382,352" fill="#58C4DD" fill-opacity="0.08" stroke="#58C4DD" stroke-opacity="0.38" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
+
+  <!-- Main smooth Bezier curve morphing into graph -->
+  <path d="M 193.6 351 C 236 392, 276 266, 326 306 C 368 340, 392 232, 426 196"
+        stroke="url(#trail-grad)" stroke-width="12" stroke-linecap="round" fill="none"/>
+
+  <!-- Graph Anchor Nodes on the curve -->
+  <circle cx="326" cy="306" r="10" fill="#0B1020" stroke="#83C167" stroke-width="5"/>
+  <circle cx="193.6" cy="351" r="7" fill="#67E8F9"/>
+
+  <!-- 4-Point Idea Sparkle at curve tip (426, 196) -->
+  <path d="M 426 164 Q 426 196 458 196 Q 426 196 426 228 Q 426 196 394 196 Q 426 196 426 164 Z"
+        fill="#FACC15"/>
+  <circle cx="448" cy="162" r="4.5" fill="#58C4DD"/>
+
+  <!-- Center Character: "GIZMO" — The Living Chalk/Stylus Companion -->
+  <!-- Rotated +22 deg around (240, 236) so its nib lands cleanly at (193.6, 351.0) -->
+  <g transform="rotate(22 240 236)">
+    <!-- Acoustic "Listening" Ear Arcs on Head -->
+    <path d="M 182 146 A 36 36 0 0 0 182 194" stroke="#58C4DD" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 298 146 A 36 36 0 0 1 298 194" stroke="#58C4DD" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- Coral Top Cap (Marker/Chalk Crown) -->
+    <rect x="206" y="96" width="68" height="34" rx="16" fill="#FB7185"/>
+    <rect x="216" y="103" width="24" height="7" rx="3.5" fill="#FFE4E6" opacity="0.65"/>
+
+    <!-- Main Chalk Cylinder Body -->
+    <rect x="198" y="118" width="84" height="178" rx="24" fill="url(#chalk-body)" stroke="#0F172A" stroke-width="4"/>
+
+    <!-- Decorative Collar Stripe -->
+    <rect x="200" y="264" width="80" height="12" fill="#38BDF8" opacity="0.85"/>
+
+    <!-- Tapered Stylus Cone + Glowing Nib (Tip at local 240, 360) -->
+    <path d="M 206 292 L 274 292 L 250 340 L 230 340 Z" fill="#CBD5E1" stroke="#0F172A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 230 338 L 250 338 L 243 358 C 241.5 361.5 238.5 361.5 237 358 Z" fill="url(#nib-glow)"/>
+
+    <!-- Expressive Visor Faceplate -->
+    <rect x="190" y="152" width="100" height="58" rx="20" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+
+    <!-- Left Eye: Attentive Glowing Cyan Orb + Catchlight -->
+    <circle cx="220" cy="179" r="9.5" fill="#58C4DD"/>
+    <circle cx="223" cy="175.5" r="3.2" fill="#FFFFFF"/>
+
+    <!-- Right Eye: Happy Curious Wink Arch -->
+    <path d="M 248 183 Q 260 168 272 183" stroke="#58C4DD" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Friendly Little Smile -->
+    <path d="M 233 196 Q 240 202 247 196" stroke="#83C167" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Subtle Cheek Glows -->
+    <ellipse cx="209" cy="191" rx="5" ry="3" fill="#FB7185" opacity="0.55"/>
+    <ellipse cx="271" cy="191" rx="5" ry="3" fill="#FB7185" opacity="0.55"/>
+  </g>
+</svg>

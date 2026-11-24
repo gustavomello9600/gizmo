@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <title>Gizmo — Monochrome Vector Mark</title>
+  <rect x="24" y="24" width="464" height="464" rx="112" stroke="currentColor" stroke-width="12"/>
+  <g stroke="currentColor" stroke-linecap="round" stroke-width="12">
+    <line x1="88" y1="176" x2="88" y2="204"/>
+    <line x1="118" y1="144" x2="118" y2="220"/>
+    <line x1="148" y1="154" x2="148" y2="200"/>
+  </g>
+  <path d="M 193.6 351 C 236 392, 276 266, 326 306 C 368 340, 392 232, 426 196"
+        stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 426 168 Q 426 196 454 196 Q 426 196 426 224 Q 426 196 398 196 Q 426 196 426 168 Z"
+        fill="currentColor"/>
+  <g transform="rotate(22 240 236)">
+    <rect x="198" y="114" width="84" height="182" rx="24" stroke="currentColor" stroke-width="10" fill="none"/>
+    <path d="M 208 296 L 272 296 L 240 360 Z" stroke="currentColor" stroke-width="10" stroke-linejoin="round" fill="none"/>
+    <rect x="192" y="152" width="96" height="58" rx="18" stroke="currentColor" stroke-width="8" fill="none"/>
+    <circle cx="220" cy="181" r="8" fill="currentColor"/>
+    <path d="M 248 184 Q 260 170 272 184" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

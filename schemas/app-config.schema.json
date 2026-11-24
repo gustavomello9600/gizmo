@@ -52,7 +52,8 @@
         },
         "autoDetectTheme": { "type": "boolean", "default": true },
         "showMascotInProjector": { "type": "boolean", "default": true },
-        "projectorChromaBg": { "type": ["string", "null"], "default": null }
+        "projectorChromaBg": { "type": ["string", "null"], "default": null },
+        "projectorTransparent": { "type": "boolean", "default": false }
       }
     },
     "shortcuts": {
