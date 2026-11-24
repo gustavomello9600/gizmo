@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gizmo.local/schemas/app-config.schema.json",
+  "title": "GizmoAppConfig",
+  "description": "Configuração local persistida em {app_config_dir}/config.json.",
+  "type": "object",
+  "required": ["audio", "asr", "llm", "canvas", "shortcuts"],
+  "properties": {
+    "audio": {
+      "type": "object",
+      "required": ["inputDeviceName", "vadThreshold", "minSilenceDurationSec", "partialTickMs"],
+      "properties": {
+        "inputDeviceName": { "type": ["string", "null"], "default": null },
+        "vadThreshold": { "type": "number", "minimum": 0.15, "maximum": 0.85, "default": 0.45 },
+        "minSilenceDurationSec": { "type": "number", "minimum": 0.18, "maximum": 1.2, "default": 0.28 },
+        "partialTickMs": { "type": "integer", "minimum": 250, "maximum": 1200, "default": 400 }
+      }
+    },
+    "asr": {
+      "type": "object",
+      "required": ["activeModelId", "forcedLanguage", "onnxThreads"],
+      "properties": {
+        "activeModelId": {
+          "type": "string",
+          "enum": ["parakeet-tdt-0.6b-v3-int8", "whisper-turbo-int8", "sense-voice-small-int8"],
+          "default": "parakeet-tdt-0.6b-v3-int8"
+        },
+        "forcedLanguage": { "type": ["string", "null"], "default": null },
+        "onnxThreads": { "type": "integer", "minimum": 1, "maximum": 8, "default": 3 }
+      }
+    },
+    "llm": {
+      "type": "object",
+      "required": ["baseUrl", "apiKey", "model", "temperature", "maxTokens", "disableThinking"],
+      "properties": {
+        "baseUrl": { "type": "string", "default": "http://127.0.0.1:11434/v1" },
+        "apiKey": { "type": "string", "default": "" },
+        "model": { "type": "string", "default": "qwen2.5:7b-instruct" },
+        "temperature": { "type": "number", "minimum": 0.0, "maximum": 1.0, "default": 0.2 },
+        "maxTokens": { "type": "integer", "minimum": 128, "maximum": 2048, "default": 512 },
+        "disableThinking": { "type": "boolean", "default": true }
+      }
+    },
+    "canvas": {
+      "type": "object",
+      "required": ["defaultTheme", "autoDetectTheme", "showMascotInProjector", "projectorChromaBg"],
+      "properties": {
+        "defaultTheme": {
+          "type": "string",
+          "enum": ["3b1b", "whiteboard", "flipchart", "ted", "blueprint", "chalkboard"],
+          "default": "whiteboard"
+        },
+        "autoDetectTheme": { "type": "boolean", "default": true },
+        "showMascotInProjector": { "type": "boolean", "default": true },
+        "projectorChromaBg": { "type": ["string", "null"], "default": null }
+      }
+    },
+    "shortcuts": {
+      "type": "object",
+      "properties": {
+        "toggleMute": { "type": "string", "default": "CommandOrControl+Shift+M" },
+        "clearCanvas": { "type": "string", "default": "CommandOrControl+Shift+K" },
+        "openProjector": { "type": "string", "default": "CommandOrControl+Shift+P" }
+      }
+    }
+  }
+}

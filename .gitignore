@@ -1,0 +1,26 @@
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/gen/schemas/
+
+# Local ONNX / ASR Models & User Data
+models/
+*.onnx
+*.tar.bz2
+*.bin
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.log

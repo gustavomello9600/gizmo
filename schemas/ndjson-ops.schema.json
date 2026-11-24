@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gizmo.local/schemas/ndjson-ops.schema.json",
+  "title": "GizmoSceneOp",
+  "description": "Schema formal de uma linha atômica NDJSON emitida pelo motor LLM ou Reflexo Tier-0.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["op", "style"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "theme" },
+        "style": { "$ref": "#/$defs/ThemeId" },
+        "locked": { "type": "boolean" }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "title" },
+        "text": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "subtitle": { "type": "string", "maxLength": 220 }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "id", "kind", "zone", "data"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "upsert" },
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_-]{1,64}$" },
+        "kind": { "$ref": "#/$defs/NodeKind" },
+        "zone": { "$ref": "#/$defs/SemanticZone" },
+        "title": { "type": "string", "maxLength": 120 },
+        "pinned": { "type": "boolean" },
+        "data": { "type": "object" }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "patch" },
+        "id": { "type": "string", "minLength": 1 },
+        "zone": { "$ref": "#/$defs/SemanticZone" },
+        "title": { "type": "string", "maxLength": 120 },
+        "data": { "type": "object" }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "id", "from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "connect" },
+        "id": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "maxLength": 80 },
+        "animated": { "type": "boolean" },
+        "style": { "type": "string", "enum": ["solid", "dashed"] }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "highlight" },
+        "id": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "maxLength": 80 },
+        "style": { "type": "string", "enum": ["pulse", "box", "underline", "spotlight"] },
+        "ttl_ms": { "type": "integer", "minimum": 300, "maximum": 15000 }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "remove" },
+        "id": { "type": "string", "minLength": 1 }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op", "focus"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "camera" },
+        "focus": { "type": "string", "minLength": 1 },
+        "zoom": { "type": "number", "minimum": 0.75, "maximum": 1.6 }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "clear" },
+        "keep_title": { "type": "boolean" }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["op"],
+      "additionalProperties": false,
+      "properties": {
+        "op": { "const": "noop" }
+      }
+    }
+  ],
+  "$defs": {
+    "ThemeId": {
+      "type": "string",
+      "enum": ["3b1b", "whiteboard", "flipchart", "ted", "blueprint", "chalkboard"]
+    },
+    "SemanticZone": {
+      "type": "string",
+      "enum": [
+        "hero",
+        "center",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "split_tl",
+        "split_tr",
+        "split_bl",
+        "split_br",
+        "footer"
+      ]
+    },
+    "NodeKind": {
+      "type": "string",
+      "enum": [
+        "math",
+        "plot_2d",
+        "geometry_2d",
+        "chart",
+        "diagram",
+        "bullets",
+        "code",
+        "matrix_2x2",
+        "funnel",
+        "timeline",
+        "kpi",
+        "comparison",
+        "callout",
+        "freehand_note"
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gizmo.local/schemas/scene-graph.schema.json",
+  "title": "GizmoSceneGraph",
+  "description": "Estado canônico completo do canvas em memória e em snapshots da linha do tempo.",
+  "type": "object",
+  "required": ["sessionId", "theme", "themeLocked", "nodes", "edges", "camera", "revision"],
+  "properties": {
+    "sessionId": { "type": "string" },
+    "revision": { "type": "integer", "minimum": 0 },
+    "theme": {
+      "type": "string",
+      "enum": ["3b1b", "whiteboard", "flipchart", "ted", "blueprint", "chalkboard"]
+    },
+    "themeLocked": { "type": "boolean" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "camera": {
+      "type": "object",
+      "required": ["focus", "zoom"],
+      "properties": {
+        "focus": { "type": "string" },
+        "zoom": { "type": "number", "minimum": 0.75, "maximum": 1.6 }
+      }
+    },
+    "nodes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "kind", "zone", "version", "orderIndex", "createdAtMs", "updatedAtMs", "data"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "type": "string" },
+          "zone": { "type": "string" },
+          "title": { "type": "string" },
+          "pinned": { "type": "boolean" },
+          "version": { "type": "integer", "minimum": 1 },
+          "orderIndex": { "type": "integer", "minimum": 0 },
+          "createdAtMs": { "type": "integer" },
+          "updatedAtMs": { "type": "integer" },
+          "data": { "type": "object" }
+        }
+      }
+    },
+    "edges": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "from", "to"],
+        "properties": {
+          "id": { "type": "string" },
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "label": { "type": "string" },
+          "animated": { "type": "boolean" },
+          "style": { "type": "string", "enum": ["solid", "dashed"] }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" fill="none">
+  <title>Gizmo — 6 Estilos Automáticos de Canvas</title>
+  <rect width="1200" height="540" rx="24" fill="#0B1020"/>
+
+  <!-- Card 1: 3b1b (Matemática & Física) -->
+  <g transform="translate(24, 24)">
+    <rect width="368" height="234" rx="16" fill="#070B14" stroke="#1E293B" stroke-width="2"/>
+    <g stroke="#1E293B" stroke-width="1">
+      <line x1="24" y1="120" x2="344" y2="120"/>
+      <line x1="184" y1="44" x2="184" y2="204"/>
+    </g>
+    <path d="M 36 150 Q 98 56 184 120 T 332 90" stroke="#58C4DD" stroke-width="3.5" fill="none"/>
+    <line x1="184" y1="120" x2="256" y2="74" stroke="#FFFF00" stroke-width="3"/>
+    <polygon points="256,74 244,76 251,85" fill="#FFFF00"/>
+    <text x="24" y="32" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#58C4DD">1. 3b1b — Matemática &amp; Exatas</text>
+    <text x="220" y="176" font-family="Georgia, serif" font-style="italic" font-size="20" fill="#83C167">f'(x) = lim Δy/Δx</text>
+  </g>
+
+  <!-- Card 2: Whiteboard (Lousa Branca Geral) -->
+  <g transform="translate(416, 24)">
+    <rect width="368" height="234" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#1D4ED8">2. Whiteboard — Lousa Branca Geral</text>
+    <rect x="28" y="64" width="124" height="56" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2.5"/>
+    <text x="90" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1E3A8A">Fotossíntese</text>
+    <path d="M 156 92 L 208 92" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="212,92 202,86 202,98" fill="#DC2626"/>
+    <rect x="216" y="64" width="124" height="56" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="2.5"/>
+    <text x="278" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#14532D">ATP + O₂</text>
+    <text x="32" y="162" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Clorofila absorve fótons solares</text>
+    <text x="32" y="190" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Fixação de carbono no Ciclo de Calvin</text>
+  </g>
+
+  <!-- Card 3: Flipchart (Negócios & Estratégia) -->
+  <g transform="translate(808, 24)">
+    <rect width="368" height="234" rx="16" fill="#FAF6EE" stroke="#D6D3D1" stroke-width="2"/>
+    <rect x="0" y="0" width="368" height="18" rx="6" fill="#44403C"/>
+    <text x="24" y="42" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#292524">3. Flipchart — Negócios &amp; Produto</text>
+    <path d="M 48 192 L 324 192 M 186 66 L 186 212" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="202" y="76" width="106" height="44" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+    <text x="255" y="103" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#92400E">Quick Wins ★</text>
+    <text x="112" y="166" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#57534E">Baixo Impacto</text>
+    <text x="256" y="166" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#0D9488" font-weight="700">Apostas Longas</text>
+  </g>
+
+  <!-- Card 4: TED Talk (Palestras & Keynotes) -->
+  <g transform="translate(24, 282)">
+    <rect width="368" height="234" rx="16" fill="#09090B" stroke="#27272A" stroke-width="2"/>
+    <circle cx="184" cy="117" r="95" fill="#E11D48" fill-opacity="0.12"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FB7185">4. TED / Keynote — Palestras</text>
+    <text x="184" y="128" text-anchor="middle" font-family="system-ui, sans-serif" font-size="64" font-weight="900" fill="#FAFAFA">87%</text>
+    <text x="184" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="500" fill="#A1A1AA">da retenção vem de memória visual ativa</text>
+    <rect x="144" y="186" width="80" height="4" rx="2" fill="#E11D48"/>
+  </g>
+
+  <!-- Card 5: Blueprint (Engenharia & Código) -->
+  <g transform="translate(416, 282)">
+    <rect width="368" height="234" rx="16" fill="#0F172A" stroke="#0284C7" stroke-width="2"/>
+    <text x="24" y="32" font-family="ui-monospace, monospace" font-size="14" font-weight="700" fill="#38BDF8">5. Blueprint — Arquitetura &amp; Dev</text>
+    <rect x="28" y="74" width="92" height="46" rx="6" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1.8"/>
+    <text x="74" y="102" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#E0F2FE">Mic 16kHz</text>
+    <line x1="120" y1="97" x2="148" y2="97" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="148" y="74" width="92" height="46" rx="6" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1.8"/>
+    <text x="194" y="102" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#E0F2FE">Parakeet</text>
+    <line x1="240" y1="97" x2="268" y2="97" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="268" y="74" width="76" height="46" rx="6" fill="#064E3B" stroke="#34D399" stroke-width="1.8"/>
+    <text x="306" y="102" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#D1FAE5">Canvas</text>
+    <rect x="28" y="144" width="316" height="62" rx="8" fill="#020617" stroke="#1E293B"/>
+    <text x="42" y="170" font-family="ui-monospace, monospace" font-size="12" fill="#A5B4FC">{"op":"upsert","kind":"diagram"}</text>
+    <text x="42" y="192" font-family="ui-monospace, monospace" font-size="12" fill="#34D399">// Latência p95: 340ms</text>
+  </g>
+
+  <!-- Card 6: Chalkboard (Quadro Verde Humanidades) -->
+  <g transform="translate(808, 282)">
+    <rect width="368" height="234" rx="16" fill="#173326" stroke="#78350F" stroke-width="4"/>
+    <text x="24" y="34" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#FEF08A">6. Chalkboard — História &amp; Humanas</text>
+    <line x1="40" y1="126" x2="328" y2="126" stroke="#F8FAFC" stroke-width="3" stroke-dasharray="14 2 8 2"/>
+    <circle cx="88" cy="126" r="7" fill="#FDE047"/>
+    <text x="88" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#F8FAFC">1789</text>
+    <text x="88" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#CBD5E1">Bastilha</text>
+    <circle cx="188" cy="126" r="7" fill="#FCA5A5"/>
+    <text x="188" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#F8FAFC">1799</text>
+    <text x="188" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#CBD5E1">18 Brumário</text>
+    <circle cx="288" cy="126" r="7" fill="#86EFAC"/>
+    <text x="288" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#F8FAFC">1815</text>
+    <text x="288" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#CBD5E1">Viena</text>
+  </g>
+</svg>
